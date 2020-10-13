@@ -50,3 +50,17 @@ ng new my-app
 create angular routing? NO (pq la idea es hacerlo manualmente en esta fase de aprendizaje)
 Which stylesheet format would you like to use? (Use arrow keys) >> CSS (en este curso se usará css nomas
 (se descargaran de github un monton de paquetes especificados en el package.json)
+cambiar el nombre de la carpeta por la que queremos que lleve nuestra app: 01-hola-mundo
+
+cd C:\Users\asd\Desktop\tests\angulartests\CursoAngular10CeroAExperto\Angular\01-hola-mundo
+ng serve
+eso va a levantar un servidor local en el puerto 4200 (x defecto)
+sino podes hacer:
+ng serve -p 4201
+si lo tenes ocupado
+
+ng serve -o
+-o = open y lo q hace es abrir el navegador por defecto
+
+
+
