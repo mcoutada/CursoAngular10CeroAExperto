@@ -1,0 +1,52 @@
+angular = angular2 a 10
+angularjs = 1ra version de angular
+
+componentes:
+una app en angular esta basada en multiples componentes
+un componente son pequeñas clases que cumplen una funcion especifica ejÑ menu de navegacion, barra lateral, main, footer
+los componentes en angular son clases normales que tienen un pequeño decorador especifico
+
+directivas estructurales:
+son instruccions que le dicen al html que hacer.
+
+	*ngif = "TRUE" --> el componente se muestra, si es false ese componente ni aparece en el html
+
+36:
+
+documentacion oficial en angular.io
+	pk = package o modulo
+	i = interfaz
+	c = clase
+	k = constante (x eso esta en mayuscula)
+	e = enumeracion
+
+tags:
+stable = se puede usr en la ultima version estable (en el menu izq se ve cual es, y se puede consultar la docu de versiones anteriores)
+
+
+pags utiles
+
+codigos ya hechos en otras paginas
+https://plnkr.co/
+https://stackblitz.com/
+
+
+src/index.html
+es lo primero que la app va a cargar
+<my-app> esta definido en scr/app/app.components.ts
+
+decorador: expande funcionalidades a la clase
+
+38:
+CLI = command line interface
+
+Tip: se puede abrir una consola, escribir "cd " y arrastrar la carpeta en la que queremos posicionarnos
+
+abri consola
+cd C:\Users\asd\Desktop\tests\angulartests\CursoAngular10CeroAExperto\Angular
+
+crear un nuevo proyecto (se puede cambiar el nombre mas adelante):
+ng new my-app
+create angular routing? NO (pq la idea es hacerlo manualmente en esta fase de aprendizaje)
+Which stylesheet format would you like to use? (Use arrow keys) >> CSS (en este curso se usará css nomas
+(se descargaran de github un monton de paquetes especificados en el package.json)
