@@ -11,6 +11,7 @@ son instruccions que le dicen al html que hacer.
 
 	*ngif = "TRUE" --> el componente se muestra, si es false ese componente ni aparece en el html
 
+----------------------------------
 36:
 
 documentacion oficial en angular.io
@@ -37,6 +38,7 @@ es lo primero que la app va a cargar
 
 decorador: expande funcionalidades a la clase
 
+----------------------------------
 38:
 CLI = command line interface
 
@@ -61,6 +63,62 @@ si lo tenes ocupado
 
 ng serve -o
 -o = open y lo q hace es abrir el navegador por defecto
+
+{{ }} = interpolacion
+
+----------------------------------
+39:
+Estructura de un proyecto:
+
+e2e:
+no es necesario para crear aplicaciones pero es para correr pruebas automaticas (end 2 end)
+
+node_modules:
+modulos de node, necesarios para el desarrollo. Es donde se guardan los paquetes declarados en el package.json
+
+Src:
+es la carpeta de source, es donde esta nuestra app. Donde trabajamos principalmente
+
+.gitignore:
+q ignore las carpetas q no nos interesa subir a git, por ej node_modules
+
+angular.json:
+le dice a angular como es nuestra app y como funciona. Nosotros principalmente trabajaremos en las secciones assets styles y scripts
+angular agrupará en un archivo todo lo que declaremos ahí, se prfundizará más adelante
+
+package-lock.json:
+le dice a nuestra app de node como se creó el package.json, no se modifica manualmente, solo deja un rastro de como se creó el package.json
+
+package.json:
+super importante. Aunque en gral no se toca. Se va creando de forma automatica.
+
+Private: declara todas las dependencias que necesita nuestro proyecto al pasar a produccion
+devDependencies: Dependencias de desarrollo. Se usan mientras creamos la app. Ej el tslint.
+README.md: detalles de nuestra app, para git. md = markdown, es como el html pero mas ligero.
+tsconfig.json: le dice a typescript como trabajar, ej: "target": es5 --> trabajaremos con ecma script 5.
+tslint.json: nos ayuda  escribir un codigo mas limpio de js y ts, los errores que aparezcan del tipo tslint, son porque violan alguna regla escrita aqui.
+
+/src/app:
+el app.comonent es el primer componente que nuestra app de angular va a cargar.
+
+(
+ver /scr/index.html:
+pg web comun y corriente salvo por la etiqueta app-root, Angular renderizará toda la app dentro de las etiquetas <app-root></app-root>
+)
+app-root esta definido en app.component.ts
+
+app.comonent.html: html del componente
+app.comonent.ts: 
+app.comonent.css: estilo q se aplica unicamente al html de mismo nombre (no necesariamente deben tener mismo nombre, eso se define en el app.component.ts)
+app.comonent.spect.ts: cualquier archivo que tenga la palabra spec, es un archivo de pruebas automaticas. Se ve en el curso avanzado
+app.module.ts: a veces se manipula manualmente, a veces automaticamente. Tiene un decorador especial, y definido de manera especial, llamado ngmodule, se prfundizará más adelante
+
+/assets: se coloca recurso estatico, como imagenes
+.gitkeep: es un archivo de git vacio, su nombre indica a git q debe subirlo al repositorio (por default, si una carpeta esta vacia, git la ignora)
+
+
+
+
 
 
 
