@@ -116,6 +116,36 @@ app.module.ts: a veces se manipula manualmente, a veces automaticamente. Tiene u
 /assets: se coloca recurso estatico, como imagenes
 .gitkeep: es un archivo de git vacio, su nombre indica a git q debe subirlo al repositorio (por default, si una carpeta esta vacia, git la ignora)
 
+/environments:
+contiene 2 archivos, environment.prod.ts y environment.ts: contiene variables de entorno
+
+browserlist: arhivo nuevo, no se usa/toca
+
+karma.config.js: archivo de configuracion de las prueba de karma, no lo vamos a tocar en este curso
+
+main.ts: es el 1er codigo q angular va a lanzar, para correr la app:
+	platformborwserdynaic(): se hace de forma automatica, configura el ambiente para una app web
+
+polifills.ts: son funciones que ayudan a la compatibilidad entre versiones viejas de navegadores web.
+
+syles.css: estilos globales
+---------------------------------------------
+40:
+
+erores importando el css de bootstrap:
+	hola los errores de advertencia, ve settings en herramientas del desarrollador y quita el check a enable CSS source maps y Enable Javascript source maps
+	claro que esos son solo mensajes de advertencia
+	en relación a error 404 , revisa bien en el index 
+
+cuando nombramos un selector, se lo comienza nombrando como app- para indicar que es algo personalizado/nuestro
+
+creamos un componente:
+\src\app\components\header\header.component.ts:
+si el html es sencillo, hasta 4 lineas max, se puede definir asi:
+    template: `<h1> Header component</h1>`
+con back ticks!
+
+hay q decirle a angular q esto es un componente, eso se hace en \src\app\app.module.ts:
 
 
 
