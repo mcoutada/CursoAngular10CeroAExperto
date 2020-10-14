@@ -1,3 +1,7 @@
+como matar el ng serve:
+for /f "tokens=5" %a in ('netstat -ano ^| find "4200" ^| find "LISTENING"') do taskkill /f /pid %a
+
+
 angular = angular2 a 10
 angularjs = 1ra version de angular
 
@@ -147,8 +151,22 @@ con back ticks!
 
 hay q decirle a angular q esto es un componente, eso se hace en \src\app\app.module.ts:
 
+--------------------------------------------
+42:
+crear un componente automaticamente:
+terminar el ng serve -o
+correr:
+ng generate component components/footer
+o lo q es lo mismo:
+ng g c components/footer
+output:
+CREATE src/app/components/footer/footer.component.html (21 bytes)
+CREATE src/app/components/footer/footer.component.spec.ts (626 bytes)
+CREATE src/app/components/footer/footer.component.ts (275 bytes)
+CREATE src/app/components/footer/footer.component.css (0 bytes)
+UPDATE src/app/app.module.ts (585 bytes)
 
+el  src/app/components/footer/footer.component.spec.ts
 
-
-
+es un archivo de pruebas, no nos interesa para un nivel principiante, borrarlo
 
