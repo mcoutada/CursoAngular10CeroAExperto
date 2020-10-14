@@ -7,5 +7,10 @@ import { Component } from '@angular/core'
 })
 export class BodyComponent {
 
+    mostrar: boolean;
 
+    frase: any = {
+        mensaje: 'Un gran poder requiere una gran responsabilidad',
+        autor: 'Ben Parker'
+    }
 }
