@@ -6,7 +6,7 @@ const APP_ROUTES: Routes = [
     { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
   
-export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash:true});
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
 
 // import { HeroesComponent } from './components/heroes/heroes.component';
 // import { AboutComponent } from './components/about/about.component';
