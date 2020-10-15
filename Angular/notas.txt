@@ -341,10 +341,45 @@ C:\Users\asd\Desktop\tests\angulartests\CursoAngular10CeroAExperto\Angular\02-sp
 	CREATE src/app/components/heroes/heroes.component.ts (251 bytes)
 	UPDATE src/app/app.module.ts (681 bytes)
 
+opcional borrar esto:
+  styles: []
+en heroes.component.ts
+
 podrias crearlo sin el -is y despues borrar el .css pero acordate de tambien borrar esta linea
   styleUrls: ['./xxxxx.component.css']
 
 en el  xxxxx/component.ts
+
+------------------------------------
+52:
+las rutas nos permiten navegar a diferentes componentes sin hacer refresh del navegador web.
+crear
+src\app\app.routes.ts
+no es obligatorio el nombre, es una convencion
+
+en src\app\app.routes.ts, esta linea:
+    { path: '**', pathMatch: 'full', redirectTo: 'home' }
+
+esta para que haga match si no se hacen match con otras rutas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
