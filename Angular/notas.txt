@@ -170,3 +170,192 @@ el  src/app/components/footer/footer.component.spec.ts
 
 es un archivo de pruebas, no nos interesa para un nivel principiante, borrarlo
 
+---------------------------------------------
+50:
+spa = singe plage app
+
+crear un nuevo componente:
+creamos manualmente: src\app\components\shared
+ahora usamos el angula cli (command line interface)
+ng g c components/shared/navbar
+g = generate
+c = component
+recordar eliminar el spec.ts
+y borrar el src\app\components\shared\navbar\navbar.component.css pq no se va a usar
+y borrar su referencia en el src\app\components\shared\navbar\navbar.component.ts
+
+si queremos bootstrap en nuestro proyecto hay 3 formas de incoporarlo:
+
+1: remotamente
+
+	te vas a :
+	https://getbootstrap.com/docs/4.5/getting-started/introduction/#separate
+
+	CSS:
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+	lo pones en src\index.html
+	dentro y al final del header
+
+	JS JQUERY Y POPPER:
+	lo pones en src\index.html pegado y antes de </body>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+
+	acá los motivos del por qué
+	https://www.w3schools.com/js/js_whereto.asp#:~:text=JavaScript%20in%20or%20%3C,HTML%20page%2C%20or%20in%20both.
+
+
+	nota: hay una version (bundle) en la que vienen popper y jquery juntos, que es la que se ve primera en bootstrap
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+		<!-- jQuery and JS bundle w/ Popper.js -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+2: descargarlo manualmente
+
+	descargas
+	https://getbootstrap.com/docs/4.5/getting-started/download/
+
+	bootstrap-4.5.3-dist.zip:
+
+	en consola tiro:
+		cd C:\Users\asd\Downloads\bootstrap-4.5.3-dist
+		dir /s /b
+
+	o mejor:
+		forfiles /s /m *.* /c "cmd /c echo @relpath"
+
+	mejor aun:
+		@echo off
+		for /f %A in ('forfiles /s /m * /c "cmd /c echo @relpath"') do echo %~A
+		 
+	y tengo:
+		bootstrap-4.5.3-dist\css
+		bootstrap-4.5.3-dist\js
+		bootstrap-4.5.3-dist\css\bootstrap-grid.css
+		bootstrap-4.5.3-dist\css\bootstrap-grid.css.map
+		bootstrap-4.5.3-dist\css\bootstrap-grid.min.css
+		bootstrap-4.5.3-dist\css\bootstrap-grid.min.css.map
+		bootstrap-4.5.3-dist\css\bootstrap-reboot.css
+		bootstrap-4.5.3-dist\css\bootstrap-reboot.css.map
+		bootstrap-4.5.3-dist\css\bootstrap-reboot.min.css
+		bootstrap-4.5.3-dist\css\bootstrap-reboot.min.css.map
+		bootstrap-4.5.3-dist\css\bootstrap.css
+		bootstrap-4.5.3-dist\css\bootstrap.css.map
+		bootstrap-4.5.3-dist\css\bootstrap.min.css
+		bootstrap-4.5.3-dist\css\bootstrap.min.css.map
+		bootstrap-4.5.3-dist\js\bootstrap.bundle.js
+		bootstrap-4.5.3-dist\js\bootstrap.bundle.js.map
+		bootstrap-4.5.3-dist\js\bootstrap.bundle.min.js
+		bootstrap-4.5.3-dist\js\bootstrap.bundle.min.js.map
+		bootstrap-4.5.3-dist\js\bootstrap.js
+		bootstrap-4.5.3-dist\js\bootstrap.js.map
+		bootstrap-4.5.3-dist\js\bootstrap.min.js
+		bootstrap-4.5.3-dist\js\bootstrap.min.js.map
+
+	usualmente las librerias vienen en una carpeta de dist (=distribucion)
+
+	pego su contenido en src\assets\libs
+	quedando:
+	src\assets\libs\css
+	src\assets\libs\js
+
+	no es un patron obligatorio, pero si recomendado, se puede poner en cualquier carpeta siempre q sea dentro de assets q es donde va el contenido estatico
+
+	luego cambiar las urls de los links
+
+		CSS:
+		<link rel="stylesheet" href="./assets/libs/css/bootstrap.min.css">
+		si no somos autores del archivo, es recomendado siempre usar la version min.imizada o comprimida
+
+	como vemos en boostrap viene el bundle, si lo queremos separado deberiamos descargar tambien popper y jquery y repetir los pasos
+	https://jquery.com/download/
+	https://popper.js.org/
+
+		JS bundle:
+		<script src="./assets/libs/js/jquery-3.5.1.slim.min.js"></script>
+		<script src="./assets/libs/js/bootstrap.bundle.min.js"></script>
+
+		JS popper y jquery separados:
+		<script src="./assets/libs/js/jquery-3.5.1.slim.min.js"></script>
+		<script src="./assets/libs/js/popper.min.js"></script>
+		<script src="./assets/libs/js/bootstrap.min.js"></script>
+
+
+3: npm install
+
+En consola:
+	cd C:\Users\asd\Desktop\tests\angulartests\CursoAngular10CeroAExperto\Angular\02-spa
+	npm install bootstrap --save
+	npm install jquery --save
+	npm install popper.js --save
+
+el --save indica q es una libreria que mi proyecto va a necesitar.
+
+Los modulos instalan en la carpeta node_modules por ej: node_modules/bootstrap
+
+Ahora como los utilizo en mi proyecto?
+estas lineas no van a estar en el index.html:
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+	<!-- jQuery and JS bundle w/ Popper.js -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+Asi que para q mi proyecto detecte estos modulos, debo especificarlo en el ./angular.json
+busco dentro de la llave "projects": {
+los campos::
+	"styles": [
+	  "src/styles.css"
+	],
+	"scripts": []
+
+y lo cambio por:
+
+	"styles": [
+	  "src/styles.css",
+      "node_modules/bootstrap/dist/css/bootstrap.min.css"
+	],
+	"scripts": [
+      "node_modules/jquery/dist/jquery.slim.min.js",
+      "node_modules/popper.js/dist/umd/popper.min.js",
+      "node_modules/bootstrap/dist/js/bootstrap.min.js"
+	],
+
+normalmente la libreria con mas dependencias va al final (antes van sus dependencias), como bootstrap necesita popper y jquery, va a lo ultimo
+bajo el server y lo vuelvo a subir (ng serve)
+notar q el popper q se usa esta dentro de la carpeta umd
+
+51:
+si no queremos crear el css con un component, agregar -is (=inlinestyle)
+C:\Users\asd\Desktop\tests\angulartests\CursoAngular10CeroAExperto\Angular\02-spa> ng g c components/heroes -is
+	CREATE src/app/components/heroes/heroes.component.html (21 bytes)
+	CREATE src/app/components/heroes/heroes.component.spec.ts (626 bytes)
+	CREATE src/app/components/heroes/heroes.component.ts (251 bytes)
+	UPDATE src/app/app.module.ts (681 bytes)
+
+podrias crearlo sin el -is y despues borrar el .css pero acordate de tambien borrar esta linea
+  styleUrls: ['./xxxxx.component.css']
+
+en el  xxxxx/component.ts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
