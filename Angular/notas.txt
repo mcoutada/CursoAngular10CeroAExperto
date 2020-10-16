@@ -362,9 +362,26 @@ en src\app\app.routes.ts, esta linea:
 
 esta para que haga match si no se hacen match con otras rutas
 
+53:
+Rutas en angular:
 
+Actual:
+import { AppRoutingModule } from './app.routes';
 
+Genera rutas tipo carpetas:
+http://localhost:4200/home
 
+Antigua:
+export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash:true});
+
+Genera rutas tipo carpetas:
+http://localhost:4200/#/home
+
+La antigua es mas eficiente y trabaja mejor con parametros. Y tiene mas soporte por parte de los navegadores
+
+Cuando no se usa el routing con hash, esta instruccion debe existir en el src\index.html
+    <base href="/">
+sino falla... (esta linea la pone el angular CLI automaticamente para nosotros.
 
 
 
