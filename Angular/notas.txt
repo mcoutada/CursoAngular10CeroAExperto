@@ -1,3 +1,6 @@
+
+asegurate de tener habilitado "enable javascript source map" en lod preferences del inspect element del chrome, asi en el console log sabes q archivo de typescript es el causante de un error
+
 como matar el ng serve:
 for /f "tokens=5" %a in ('netstat -ano ^| find "4200" ^| find "LISTENING"') do taskkill /f /pid %a
 
